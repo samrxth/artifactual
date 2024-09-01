@@ -63,4 +63,31 @@
   body {
     @apply bg-background text-foreground;
   }
+    ul {
+      @apply list-disc pl-4;
+    }
+    ol {
+      @apply list-decimal pl-4;
+    }
+    h1 {
+      @apply text-4xl font-bold mt-4 mb-2;
+    }
+    h2 {
+      @apply text-3xl font-bold mt-4 mb-2;
+    }
+    h3 {
+      @apply text-2xl font-bold mt-4 mb-2;
+    }
+    h4 {
+      @apply text-xl font-bold mt-4 mb-2;
+    }
+    h5 {
+      @apply text-lg font-bold mt-4 mb-2;
+    }
+    h6 {
+      @apply text-base font-bold mt-4 mb-2;
+    }
+    a {
+      @apply text-blue-600 underline;
+    }
 }
