@@ -8,6 +8,8 @@ import React, {
 import { Send, Trash2, X, ArrowUpRight } from "lucide-react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ReactMarkdown from "react-markdown";
+import Mermaid from "./Mermaid";
+
 
 // Import ShadCN UI components
 import { Input } from "@/components/ui/input";
@@ -90,6 +92,7 @@ const ArtifactDisplay: React.FC<{
 }> = ({ artifact, onClose }) => {
   if (!artifact) return null;
 
+
   const renderPreview = () => {
     switch (artifact.type) {
       case "text/markdown":
@@ -99,8 +102,7 @@ const ArtifactDisplay: React.FC<{
       case "image/svg+xml":
         return <div dangerouslySetInnerHTML={{ __html: artifact.content }} />;
       case "application/vnd.ant.mermaid":
-        // Note: Mermaid rendering would require additional setup
-        return <div>Mermaid diagram preview not yet implemented</div>;
+        return <Mermaid chart={artifact.content} />
       case "application/vnd.ant.react":
         // Note: React component rendering would require additional setup
         return <div>React component preview not yet implemented</div>;
